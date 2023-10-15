@@ -1,3 +1,4 @@
+const workoutModel = require('../models/workoutModel');
 const Workout = require('../models/workoutModel');
 
 const getAllWorkouts = async () => {
@@ -11,6 +12,18 @@ const getAllWorkouts = async () => {
     }
 };
 
+const getOneWorkout = async (workoutId) => {
+    try{
+        const workout = await Workout.findById(workoutId);
+        return workout;
+    }
+    catch(error)
+    {
+        throw error;
+    }
+};
+
 module.exports = {
-    getAllWorkouts
+    getAllWorkouts,
+    getOneWorkout
 }
