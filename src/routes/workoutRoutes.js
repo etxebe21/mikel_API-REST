@@ -1,15 +1,8 @@
-//Cargamos el módulo de mongoose
-const mongoose = require('mongoose');
+const express = require("express");
+const router = express.Router();
 
-//Usaremos los esquemas
-const {Schema} = mongoose;
+const workoutController = require("../controllers/workoutController");
 
-//Creamos el objeto del esquema y sus atributos
-const workoutSchema = new Schema({
-    name: String,
-    mode: String,
-    equipment: [String]
-});
+router.get("/", workoutController.getAllWorkouts);
 
-//Exportamos el modelo para usarlo en otros ficheros 
-module.exports = mongoose.model('Workout', workoutSchema);
+module.exports = router;
