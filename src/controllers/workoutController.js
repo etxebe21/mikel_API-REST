@@ -6,7 +6,7 @@ const getAllWorkouts = async(req,res) => {
         if(allWorkouts.length === 0) {
             return res.status(404).send({message: 'NO existen workouts'});
         }
-        res.send({status: "OK", data: allWorkoutsv});
+        res.send({status: "OK", data: allWorkouts});
     }catch(error) {
         res
             .status(error?.status || 500)
