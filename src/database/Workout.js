@@ -23,7 +23,20 @@ const getOneWorkout = async (workoutId) => {
     }
 };
 
+const createNewWorkout = async (newWorkout) => {
+    try {
+        let workoutToInsert = new Workout(newWorkout);
+        const createdWorkout = await workoutToInsert.save();
+        return createdWorkout;
+    }
+    catch (error)
+    {
+        throw error;
+    }
+};
+
 module.exports = {
     getAllWorkouts,
-    getOneWorkout
+    getOneWorkout,
+    createNewWorkout
 }

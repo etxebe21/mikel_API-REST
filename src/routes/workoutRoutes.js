@@ -7,4 +7,6 @@ router.get("/", workoutController.getAllWorkouts);
 
 router.get("/:workoutId", workoutController.getOneWorkout);
 
+router.post("/", workoutController.createNewWorkout);
+
 module.exports = router;
